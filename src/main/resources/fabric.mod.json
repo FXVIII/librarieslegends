@@ -5,13 +5,13 @@
 	"name": "libraries-legends",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
-		"Me!"
+		"pendesu"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/librarieslegends/icon.png",
 	"environment": "*",
 	"entrypoints": {
