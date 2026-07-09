@@ -9,14 +9,23 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.pendesu.LibrariesLegends;
+import net.pendesu.item.custom.BookBundleItem;
+
+import java.util.function.Function;
 
 public class ModItems {
-    public static final Item BOOK_BUNDLE = registerItem("book_bundle", new Item.Settings());
+    public static final Item BOOK_BUNDLE =
+            registerItem("book_bundle", BookBundleItem::new);
 
-    public static Item registerItem(String name, Item.Settings settings) {
-        Identifier id = Identifier.of(LibrariesLegends.MOD_ID + ":" + name);
+
+
+
+    public static Item registerItem(String name, Function<Item.Settings, Item> factory) {
+        Identifier id = Identifier.of(LibrariesLegends.MOD_ID, name);
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);
-        Item item = new Item(settings.registryKey(key));
+
+        Item item = factory.apply(new Item.Settings().registryKey(key));
+
         return Registry.register(Registries.ITEM, key, item);
     }
 

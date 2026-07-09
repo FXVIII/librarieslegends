@@ -27,6 +27,7 @@
 	},
 	"mixins": [
 		"librarieslegends.mixins.json"
+
 	],
 	"depends": {
 		"fabricloader": ">=0.19.3",
